@@ -4,17 +4,21 @@ const backEl = document.querySelector('#back');
 const products = [
   {id:'burger',name:'Burger',price:23,image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=85'},
   {id:'pizza',name:'Pizza',price:14,range:'14–21',image:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=85'},
-  {id:'cola',name:'Cola',price:3,image:'https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=500&q=85'},
+  {id:'cola',name:'Cola',price:3,image:'https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=85'},
   {id:'sprite',name:'Sprite',price:3,image:'https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?auto=format&fit=crop&w=500&q=85'},
-  {id:'sevenup',name:'7UP',price:3,image:'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=500&q=85'},
+  {id:'sevenup',name:'7UP',price:3,image:'assets/7up.png'},
   {id:'pepsi',name:'Pepsi',price:3,image:'https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=500&q=85'},
-  {id:'mirinda-orange',name:'Mirinda Orange',price:3,image:'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=85'},
-  {id:'mirinda-strawberry',name:'Mirinda Strawberry',price:3,image:'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=85'},
-  {id:'dew',name:'Mountain Dew',price:3,image:'https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=500&q=85'},
-  {id:'kenza',name:'Kenza',price:2.5,image:'https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=85'},
+  {id:'mirinda-orange',name:'Mirinda Orange',price:3,image:'assets/mirinda-orange.png'},
+  {id:'mirinda-strawberry',name:'Mirinda Strawberry',price:3,image:'assets/mirinda-strawberry.png'},
+  {id:'dew',name:'Mountain Dew',price:3,image:'assets/mountain-dew.png'},
+  {id:'kenza',name:'Kenza',price:2.5,image:'assets/kenza.png'},
+  {id:'water',name:'Water',price:1,image:'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=500&q=85'},
   {id:'fries',name:'Fries',price:5,image:'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=85'},
   {id:'special-fries',name:'Special Fries',price:15,image:'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=85'},
-  {id:'salad',name:'Salad',price:14,image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=85'}
+  {id:'salad',name:'Salad',price:14,image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=85'},
+  {id:'ranch-sauce',name:'Ranch Sauce',price:2.5,image:'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=85'},
+  {id:'garlic-sauce',name:'Garlic Sauce',price:2.5,image:'https://images.unsplash.com/photo-1472476442910-2a035643b3e9?auto=format&fit=crop&w=500&q=85'},
+  {id:'spicy-sauce',name:'Spicy Sauce',price:2.5,image:'https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=500&q=85'}
 ];
 let cart={},mode='welcome';
 const money=n=>`${Number(n).toFixed(2).replace('.00','')} SAR`;
