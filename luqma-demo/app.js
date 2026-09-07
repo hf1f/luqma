@@ -2,6 +2,9 @@ const chatEl = document.querySelector('#conversation');
 const screenEl = document.querySelector('#screen');
 const backEl = document.querySelector('#back');
 const resetEl = document.querySelector('#resetChat');
+const deviceTimeEl = document.querySelector('#deviceTime');
+const batteryLevelEl = document.querySelector('#batteryLevel');
+const batteryTextEl = document.querySelector('#batteryText');
 const products = [
   {id:'burger',name:'Burger',price:23,image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=85'},
   {id:'pizza',name:'Pizza',price:14,range:'14–21',image:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=85'},
@@ -24,6 +27,8 @@ const products = [
 let cart={},mode='welcome',language=null;
 const money=n=>`${Number(n).toFixed(2).replace('.00','')} SAR`;
 const time=()=>new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+function updateDeviceStatus(){deviceTimeEl.textContent=new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});document.querySelector('.network-icon').textContent=navigator.onLine?'⌁':'×';if(navigator.getBattery){navigator.getBattery().then(b=>{const level=Math.round(b.level*100);batteryTextEl.textContent=`${level}%`;batteryLevelEl.style.width=`${level}%`;batteryLevelEl.classList.toggle('charging',b.charging);});}else{batteryTextEl.textContent='85%';batteryLevelEl.style.width='85%';}}
+updateDeviceStatus();setInterval(updateDeviceStatus,30000);window.addEventListener('online',updateDeviceStatus);window.addEventListener('offline',updateDeviceStatus);
 const arabicNames={Burger:'برجر',Pizza:'بيتزا',Cola:'كولا',Sprite:'سبرايت','7UP':'7UP',Pepsi:'بيبسي','Mirinda Orange':'ميرندا برتقال','Mirinda Strawberry':'ميرندا فراولة','Mountain Dew':'ماونتن ديو',Kenza:'كينزا',Water:'ماء',Fries:'بطاطس','Special Fries':'بطاطس خاصة',Salad:'سلطة','Ranch Sauce':'صوص رانش','Garlic Sauce':'صوص ثوم','Spicy Sauce':'صوص حار'};
 const productName=p=>language==='ar'?(arabicNames[p.name]||p.name):p.name;
 function bubble(html,type='incoming'){const el=document.createElement('div');el.className=`bubble ${type}`;el.innerHTML=`${html}<small>${time()} ${type==='outgoing'?'✓✓':''}</small>`;chatEl.appendChild(el);chatEl.scrollTop=chatEl.scrollHeight;}
