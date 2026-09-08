@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لقمة | Luqma — منصة طلبات المطاعم عبر واتساب بدون عمولة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-mid"></div>
+
+  <!-- Primary Top Bar -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <a href="#" class="brand-link">
+          <span class="brand-badge">ل</span>
+          <div class="brand-titles">
+            <span class="brand-ar">لقمة</span>
+            <span class="brand-en">LUQMA</span>
+          </div>
+        </a>
+        <span class="demo-badge">
+          <span class="pulse-dot"></span>
+          <span data-i18n="demo_badge">ديمو المستثمرين MVP</span>
+        </span>
+      </div>
+
+      <div class="header-tools">
+        <!-- Language Switcher Pill next to Dark Mode -->
+        <button id="langToggle" class="lang-pill-btn" aria-label="Toggle Language" title="تغيير اللغة / Change Language">
+          <span class="lang-globe">🌐</span>
+          <span id="langText" class="lang-text">English</span>
+        </button>
+
+        <!-- Dark/Light Mode Button -->
+        <button id="themeToggle" class="tool-btn theme-btn" aria-label="Toggle Dark/Light Mode" title="الوضع الليلي / النهاري">
+          <svg class="sun-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Simulator CTA in Header -->
+        <a href="#simulator" class="btn-primary-header" data-i18n="nav_cta">جرب المحاكي الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Sub-Navigation Bar (كما في فيديو هيونداي) -->
+  <nav id="stickySubNav" class="sub-nav">
+    <div class="sub-nav-container">
+      <div class="sub-nav-title">
+        <b data-i18n="subnav_brand">لقمة</b>
+        <small data-i18n="subnav_sub">منظومة الطلب المباشر</small>
+      </div>
+      <ul class="sub-nav-links">
+        <li><a href="#overview" class="sub-link active" data-target="overview" data-i18n="tab_overview">نظرة عامة</a></li>
+        <li><a href="#specs" class="sub-link" data-target="specs" data-i18n="tab_specs">المواصفات</a></li>
+        <li><a href="#features" class="sub-link" data-target="features" data-i18n="tab_features">المميزات</a></li>
+        <li><a href="#customizer" class="sub-link" data-target="customizer" data-i18n="tab_customizer">محرك التخصيص</a></li>
+        <li><a href="#simulator" class="sub-link" data-target="simulator" data-i18n="tab_simulator">المحاكي التفاعلي</a></li>
+      </ul>
+      <div class="sub-nav-cta">
+        <a href="#simulator" class="sub-cta-btn" data-i18n="subnav_cta">ابدأ التجربة</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="overview" class="hero-stage">
+    <div class="hero-wrapper">
+      <div class="hero-tag reveal-on-scroll">
+        <span data-i18n="hero_tag">قناة بيع مباشرة ومملوكة للمطعم 100%</span>
+      </div>
+
+      <h1 class="hero-main-title reveal-on-scroll">
+        <span class="ar-line" data-i18n="hero_title">اطلب مثل ما تسولف.</span>
+        <span class="en-line">LUQMA • 0% COMMISSION</span>
+      </h1>
+
+      <p class="hero-subtext reveal-on-scroll" data-i18n="hero_sub">
+        بدل الاعتماد على المكالمات اليدوية أو منصات التوصيل التي تقتطع حتى 30% من أرباحك، يفتح العميل محادثة واتساب عادية، يتصفح قائمة طعام مصورة، يخصص وجبته بدقة، ويطلب في ثوانٍ.
+      </p>
+
+      <div class="hero-actions reveal-on-scroll">
+        <a href="#simulator" class="hero-btn-primary">
+          <span data-i18n="hero_btn_primary">جرّب محاكي الطلب الآن</span>
+          <span class="btn-arrow">←</span>
+        </a>
+        <a href="#specs" class="hero-btn-secondary" data-i18n="hero_btn_secondary">استكشف المواصفات</a>
+      </div>
+
+      <!-- Hero Visual Preview Banner -->
+      <div class="hero-banner-card reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Luqma Restaurant Experience" class="hero-banner-img">
+        <div class="hero-banner-overlay">
+          <div class="overlay-text">
+            <h3 data-i18n="banner_title">ثقة وسرعة بدون تطبيقات خارجية</h3>
+            <p data-i18n="banner_sub">تجربة مستخدم تفاعلية تحاكي واتساب الأصلي داخل إطار آيفون متطور</p>
+          </div>
+          <a href="#simulator" class="banner-overlay-btn" data-i18n="banner_btn">فتح المحاكي</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Specs Bar (كما في الدقيقة 00:01 بالفيديو) -->
+  <section id="specs" class="specs-section">
+    <div class="content-container">
+      <div class="section-title-center reveal-on-scroll">
+        <span class="section-badge" data-i18n="specs_badge">المواصفات التقنية والأرقام</span>
+        <h2 data-i18n="specs_title">مزايا ذكية لراحة وأرباح مستدامة</h2>
+        <p data-i18n="specs_sub">تجمع لقمة بين سرعة التقنيات الحديثة والواجهة المألوفة لطلب أسهل وأسرع لعملائك</p>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card reveal-on-scroll">
+          <div class="spec-metric">
+            <span class="spec-number count-up" data-target="0">0</span>
+            <span class="spec-unit">%</span>
+          </div>
+          <div class="spec-label" data-i18n="spec1_label">عمولة منصات التوصيل</div>
+          <div class="spec-desc" data-i18n="spec1_desc">احتفظ بكامل إيرادات طلباتك دون مشاركة الأرباح أو رسوم خفية.</div>
+        </div>
+
+        <div class="spec-card reveal-on-scroll">
+          <div class="spec-metric">
+            <span class="spec-number count-up" data-target="3">3</span>
+            <span class="spec-unit">x</span>
+          </div>
+          <div class="spec-label" data-i18n="spec2_label">أسرع من الاتصال الهاتفي</div>
+          <div class="spec-desc" data-i18n="spec2_desc">وداعاً لخطوط الهاتف المشغولة وأخطاء تسجيل الطلبات اليدوية ومراجعة الفواتير.</div>
+        </div>
+
+        <div class="spec-card reveal-on-scroll">
+          <div class="spec-metric">
+            <span class="spec-number count-up" data-target="100">100</span>
+            <span class="spec-unit">%</span>
+          </div>
+          <div class="spec-label" data-i18n="spec3_label">امتلاك بيانات العميل بالكامل</div>
+          <div class="spec-desc" data-i18n="spec3_desc">أرقام هواتف العملاء وسجلات طلباتهم ملكك أنت فقط لإعادة استهدافهم في أي وقت.</div>
+        </div>
+
+        <div class="spec-card reveal-on-scroll">
+          <div class="spec-metric">
+            <span class="spec-number count-up" data-target="14">14</span>
+            <span class="spec-unit">+</span>
+          </div>
+          <div class="spec-label" data-i18n="spec4_label">صنف متنوع في ديمو لقمة</div>
+          <div class="spec-desc" data-i18n="spec4_desc">برجر فاخر، بيتزا بأحجام متعددة، مقبلات وصوصات وعصائر ومشروبات غازية.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Horizontal Card Carousel (كما في الدقيقة 00:02 بالفيديو) -->
+  <section id="features" class="carousel-section">
+    <div class="content-container">
+      <div class="carousel-header reveal-on-scroll">
+        <div>
+          <span class="section-badge" data-i18n="feat_badge">المميزات الرئيسية</span>
+          <h2 data-i18n="feat_title">تصميم يلفت الأنظار ويرتقي بكل تفاصيل الطلب</h2>
+        </div>
+        <!-- Carousel Nav Arrows -->
+        <div class="carousel-controls">
+          <button id="carouselPrev" class="carousel-nav-btn" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <button id="carouselNext" class="carousel-nav-btn" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-track-wrapper">
+        <div id="carouselTrack" class="carousel-track">
+          <!-- Card 1 -->
+          <article class="feature-card reveal-on-scroll">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="التصميم">
+              <span class="card-category" data-i18n="card1_cat">واجهة المحادثة</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="card1_title">بدء الطلب بأي رسالة عادية</h3>
+              <p data-i18n="card1_desc">يكفي أن يرسل العميل "هلا" أو حتى حرفاً واحداً ليرد البوت فوراً بالترحيب الثنائي ويفتح قائمة المنتجات المصورة بكامل تفاصيلها.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card reveal-on-scroll">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80" alt="الأداء">
+              <span class="card-category" data-i18n="card2_cat">محرك التخصيص</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="card2_title">تخصيص دقيق ومستقل لكل صنف</h3>
+              <p data-i18n="card2_desc">خيارات الجبن، مستوى البهارات، قطع اللحم الإضافية، العجائن، وحذف المكونات. كل صنف مخصص يحتفظ بخياراته بشكل مستقل في السلة.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card reveal-on-scroll">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80" alt="الدفع">
+              <span class="card-category" data-i18n="card3_cat">الدفع المحلي</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="card3_title">مدى و Apple Pay والدفع بالمحل</h3>
+              <p data-i18n="card3_desc">تجربة دفع سلسة متوافقة مع المتطلبات السعودية مع التحقق الصارم من صحة رقم الجوال 05xxxxxxxx وكتابة الاسم بالحروف فقط.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-card reveal-on-scroll">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=600&q=80" alt="المرونة">
+              <span class="card-category" data-i18n="card4_cat">ثنائي اللغة</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="card4_title">دعم فوري للعربية والإنجليزية</h3>
+              <p data-i18n="card4_desc">واجهة متكاملة باللغة العربية بدعم كامل للاتجاه من اليمين لليسار (RTL) أو بالإنجليزية (LTR) بضغطة زر واحدة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pagination Indicator Dots -->
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Interactive Tabs (كما في الدقيقة 00:04 بالفيديو) -->
+  <section id="customizer" class="tabs-showcase-section">
+    <div class="content-container">
+      <div class="section-title-center reveal-on-scroll">
+        <span class="section-badge" data-i18n="tabs_badge">استعراض المنظومة</span>
+        <h2 data-i18n="tabs_title">تخصيص متقدم يلفت الأنظار ويوفر تجربة استثنائية</h2>
+      </div>
+
+      <!-- Tab Switcher Navigation -->
+      <div class="tabs-nav reveal-on-scroll">
+        <button class="tab-btn active" data-tab="burger-tab" data-i18n="tab_btn_burger">محرك البرجر الفاخر</button>
+        <button class="tab-btn" data-tab="pizza-tab" data-i18n="tab_btn_pizza">تشكيلة البيتزا الإيطالية</button>
+        <button class="tab-btn" data-tab="drinks-tab" data-i18n="tab_btn_drinks">المشروبات والإضافات</button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="tabs-content">
+        <!-- Tab 1: Burger -->
+        <div id="burger-tab" class="tab-pane active">
+          <div class="tab-grid">
+            <div class="tab-card reveal-on-scroll">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85" alt="Burger" class="tab-card-img">
+              <div class="tab-card-info">
+                <h4 data-i18n="burger_card_title">برجر اللحم الكلاسيكي — 23 ريال</h4>
+                <p data-i18n="burger_card_desc">خيارات الجبن (بدون، عادي، أو إكسترا +2 ريال)، ومستوى البهارات المفضل، مع إمكانية إضافة شريحة لحم إضافية (+5.5 ريال) وحذف الطماطم أو البصل وكتابة ملاحظات خاصة للطهي.</p>
+              </div>
+            </div>
+            <div class="tab-card reveal-on-scroll">
+              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85" alt="Fries" class="tab-card-img">
+              <div class="tab-card-info">
+                <h4 data-i18n="fries_card_title">البطاطس والمقبلات — 5 إلى 15 ريال</h4>
+                <p data-i18n="fries_card_desc">بطاطس مقرمشة عادية أو بطاطس خاصة بالجبن والصوصات الفاخرة، مع صوصات رانش وثوم وصوص حار مستقل بـ 2.5 ريال فقط لكل صوص.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Pizza -->
+        <div id="pizza-tab" class="tab-pane">
+          <div class="tab-grid">
+            <div class="tab-card">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=85" alt="Pizza Sizes" class="tab-card-img">
+              <div class="tab-card-info">
+                <h4 data-i18n="pizza_card1_title">3 أحجام دقيقة: صغير 16، وسط 19، كبير 23 ريال</h4>
+                <p data-i18n="pizza_card1_desc">4 نكهات فاخرة: بيبروني، مارغريتا، دجاج رانش، وأربع أجبان. يتحدد السعر تلقائياً بناءً على الحجم المختار دون فرض رسوم غير متوقعة.</p>
+              </div>
+            </div>
+            <div class="tab-card">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=85" alt="Pizza Addons" class="tab-card-img">
+              <div class="tab-card-info">
+                <h4 data-i18n="pizza_card2_title">إضافات البيتزا المدفوعة</h4>
+                <p data-i18n="pizza_card2_desc">موزاريلا إضافية (+3 ريال)، سجق (+4 ريال)، دجاج مشوي (+5 ريال)، وزيتون أسود (+2 ريال). تُحسب الإضافات بدقة متناهية في إجمالي السلة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Drinks -->
+        <div id="drinks-tab" class="tab-pane">
+          <div class="tab-grid">
+            <div class="tab-card">
+              <img src="assets/kenza.png" alt="Kenza & Soft Drinks" class="tab-card-img" style="object-fit:contain; background:var(--bg-surface-elevated); padding:20px;">
+              <div class="tab-card-info">
+                <h4 data-i18n="drinks_card1_title">مشروبات غازية وطنية وعالمية</h4>
+                <p data-i18n="drinks_card1_desc">كولا وبيبسي وسبرايت وماونتن ديو (3 ريال)، ومشروب كينزا الوطني (2.5 ريال)، مع ماء نقي (1 ريال) وخيارات الثلج المجانية: ثلج عادي، بدون ثلج، أو إكسترا ثلج.</p>
+              </div>
+            </div>
+            <div class="tab-card">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=85" alt="Salad" class="tab-card-img">
+              <div class="tab-card-info">
+                <h4 data-i18n="drinks_card2_title">سلطات وصوصات جانبية طازجة</h4>
+                <p data-i18n="drinks_card2_desc">سلطة خضراء منعشة وصحية بسعر 14 ريال مع صوص الرانش وصوص الثوم والصوص الحار لترقية وجبة العميل بكل سهولة وبضغطة واحدة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Split Detail Highlights (كما في 00:05 بالفيديو) -->
+  <section class="split-detail-section">
+    <div class="content-container">
+      <div class="split-row reveal-on-scroll">
+        <div class="split-text">
+          <span class="section-badge" data-i18n="split_badge">التجربة المحلية السعودية</span>
+          <h3 data-i18n="split_title">تحقق ذكي وموثوق من بيانات العميل</h3>
+          <p data-i18n="split_desc">لضمان عدم حدوث أخطاء في التوصيل أو تواصل السائق، يتأكد النظام من إدخال الاسم بالحروف فقط وبثلاثة أحرف على الأقل، ورقم الجوال بصيغة الجوالات السعودية المعتمدة 05xxxxxxxx المكونة من 10 أرقام بالضبط.</p>
+          <div class="split-points">
+            <div class="point-item" data-i18n="point1">✓ منع إدخال أرقام وهمية أو رموز في حقل الاسم</div>
+            <div class="point-item" data-i18n="point2">✓ اشتراط رقم جوال سعودي يبدأ بـ 05 حصراً</div>
+            <div class="point-item" data-i18n="point3">✓ تأكيد فوري بالرسائل التفاعلية مع طابع زمني دقيق</div>
+          </div>
+          <a href="#simulator" class="split-cta" data-i18n="split_cta">جرب إدخال البيانات في المحاكي ←</a>
+        </div>
+        <div class="split-visual">
+          <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=900&q=85" alt="Checkout Validation" class="split-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: The Grand Finale — Interactive Simulator -->
+  <section id="simulator" class="simulator-section">
+    <div class="content-container">
+      <div class="section-title-center reveal-on-scroll">
+        <span class="section-badge" data-i18n="sim_badge">المحاكي التفاعلي الحي</span>
+        <h2 data-i18n="sim_title">جرب منظومة لقمة بنفسك الآن</h2>
+        <p data-i18n="sim_sub">استخدم الهاتف أدناه كما لو كنت عميلاً حقيقياً. أرسل رسالة، اختر اللغة، تصفح المنيو، خصص طلبك، وأتمم الطلب التجريبي.</p>
+      </div>
+
+      <!-- Realistic iPhone 16 Pro Container -->
+      <div class="simulator-wrapper reveal-on-scroll">
+        <div class="phone">
+          <!-- Dynamic Island -->
+          <div class="dynamic-island"></div>
+
+          <!-- Phone Header -->
+          <header class="phone-header">
+            <div class="status-bar">
+              <span id="deviceTime" class="status-time">--:--</span>
+              <span class="status-icons">
+                <svg class="signal-svg" width="17" height="12" viewBox="0 0 17 12">
+                  <rect x="0" y="9" width="3" height="3" rx="0.5" fill="currentColor"/>
+                  <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="currentColor"/>
+                  <rect x="9" y="3" width="3" height="9" rx="0.5" fill="currentColor"/>
+                  <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="currentColor"/>
+                </svg>
+                <svg class="wifi-svg" width="14" height="12" viewBox="0 0 16 12">
+                  <path d="M8 11.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" fill="currentColor" transform="translate(0,-2)"/>
+                  <path d="M5 9.5c.8-.8 1.9-1.3 3-1.3s2.2.5 3 1.3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" transform="translate(0,-2)"/>
+                  <path d="M2.5 7c1.4-1.5 3.3-2.3 5.5-2.3s4.1.8 5.5 2.3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" transform="translate(0,-2)"/>
+                  <path d="M0 4.5C1.9 2.5 4.8 1 8 1s6.1 1.5 8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" transform="translate(0,-2)"/>
+                </svg>
+                <span class="battery-container">
+                  <span class="battery">
+                    <span id="batteryLevel" class="battery-fill"></span>
+                  </span>
+                  <span id="batteryText" style="display:none;"></span>
+                </span>
+              </span>
+            </div>
+
+            <div class="chat-header">
+              <button id="back" class="back-btn" aria-label="Back">‹</button>
+              <div class="avatar">ل</div>
+              <div class="contact-info">
+                <b>Luqma - لقمة</b>
+                <small><span class="online-dot"></span> <span id="onlineStatusText">متصل الآن</span></small>
+              </div>
+              <div class="header-actions">
+                <button id="resetChat" class="reset-btn" aria-label="Restart conversation" title="إعادة بدء المحادثة">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+                    <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <!-- Chat Conversation Area -->
+          <div id="conversation" class="conversation"></div>
+
+          <!-- Bottom Screen: Composer, Catalog, Customizer, Cart, Checkout -->
+          <div id="screen" class="screen"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="content-container footer-flex">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="brand-badge">ل</span>
+          <b>لقمة • LUQMA</b>
+        </div>
+        <p data-i18n="footer_desc">المنصة المباشرة لتمكين المطاعم في المملكة العربية السعودية من إدارة طلباتها وحفظ أرباحها بدون عمولات المنصات.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#overview" data-i18n="tab_overview">نظرة عامة</a>
+          <a href="#specs" data-i18n="tab_specs">المواصفات</a>
+          <a href="#features" data-i18n="tab_features">المميزات</a>
+          <a href="#simulator" data-i18n="tab_simulator">تجربة الديمو</a>
+        </div>
+        <div class="footer-copy">© 2026 لقمة للتقنية. جميع الحقوق محفوظة.</div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
