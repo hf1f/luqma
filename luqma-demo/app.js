@@ -6,6 +6,7 @@ const deviceTimeEl = document.querySelector('#deviceTime');
 const batteryLevelEl = document.querySelector('#batteryLevel');
 const batteryTextEl = document.querySelector('#batteryText');
 const phoneEl = document.querySelector('.phone');
+screenEl.innerHTML='<form class="composer"><button type="button" class="emoji">☺</button><input id="messageInput" autocomplete="off" placeholder="Type a message"><button type="button" class="clip">⌕</button><button class="send" aria-label="Send">➤</button></form>';
 const statusBarEl = document.querySelector('.status-bar');
 const deviceStatusEl = document.querySelector('.device-status');
 try {
