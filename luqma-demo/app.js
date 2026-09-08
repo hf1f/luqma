@@ -18,7 +18,6 @@ document.querySelector('.battery').style.borderColor='#ffffff';
 document.querySelector('.battery').style.background='transparent';
 document.querySelector('.battery').style.setProperty('--battery-color','#ffffff');
 batteryLevelEl.style.background='#ffffff';
-document.querySelector('.battery:after');
 chatEl.style.minHeight='0';
 screenEl.style.flex='0 0 64px';
 screenEl.style.height='64px';
