@@ -1,0 +1,384 @@
+LUQMA PROJECT PLAN
+==================
+
+Project name: Luqma - لقمة
+Project type: WhatsApp-style restaurant ordering MVP
+Current scope: One restaurant, demo only, fake data, no real integrations
+Target audience: Restaurant owners, investors, and customers
+
+1. PROJECT IDEA
+---------------
+
+Luqma is a commission-free restaurant ordering experience inspired by WhatsApp.
+Instead of relying on phone calls or third-party delivery platforms, the customer
+opens a conversation with the restaurant, browses a visual menu, customizes items,
+builds a cart, and submits an order through a familiar chat interface.
+
+The current product is an investor demo. It should look and behave like a real
+WhatsApp ordering conversation, but it does not need real WhatsApp, payment,
+database, authentication, or restaurant integrations yet.
+
+2. PROBLEM AND OPPORTUNITY
+--------------------------
+
+Restaurants commonly face two expensive ordering options:
+
+1. Phone ordering requires staff to answer calls, repeat the menu, record orders,
+   and handle mistakes manually.
+2. Third-party delivery platforms can charge large commissions and control the
+   customer relationship and order data.
+
+Luqma aims to provide a direct-to-customer ordering channel owned by the restaurant,
+with a predictable cost and a faster ordering experience.
+
+3. MVP OBJECTIVES
+-----------------
+
+The MVP must demonstrate these points to investors:
+
+- Ordering feels like a natural WhatsApp conversation.
+- Customers can start by typing any message, including a single character.
+- The bot responds with a bilingual language-selection message.
+- Arabic and English are supported.
+- Customers can browse a visual product catalog.
+- Customers can select quantities and review a cart.
+- Customers can customize products using realistic options.
+- Each customized item keeps its own options in the cart.
+- The final order collects the customer name, mobile number, and payment method.
+- Cash completes the demo order.
+- Apple Pay and Mada show a demo payment step that can later connect to an API.
+
+4. CUSTOMER USER FLOW
+---------------------
+
+The intended conversation is:
+
+1. The customer opens the Luqma chat.
+2. The customer types any message and presses Send.
+3. The message appears as an outgoing WhatsApp-style bubble.
+4. The bot replies first in Arabic and then in English:
+   - Arabic welcome message
+   - Arabic question asking which language the customer prefers
+   - English welcome message
+   - English language question
+5. The customer chooses Arabic or English using buttons.
+6. The selected language appears as an outgoing message.
+7. The bot says “Here is the menu” in the selected language.
+8. The bot displays an All Products catalog card with an image, item count,
+   description, and a View Items button.
+9. The customer presses View Items.
+10. The product list opens with images, product names, prices, and quantity controls.
+11. The customer can press plus or minus to change quantities.
+12. The customer can open the cart.
+13. The cart displays every selected item, its quantity, customizations, line price,
+    and the estimated total.
+14. The customer sends the cart.
+15. The bot asks for:
+    - Name
+    - Mobile number
+    - Payment method
+16. The payment options are:
+    - Cash at the restaurant
+    - Apple Pay
+    - Mada
+17. Cash displays a successful order confirmation.
+18. Apple Pay and Mada display a demo payment page. In a future phase, these buttons
+    should redirect to a real payment gateway API.
+
+5. CURRENT MVP MENU
+-------------------
+
+The current menu should include:
+
+- Burger — 23 SAR
+- Pizza — price depends on size
+- Cola — 3 SAR
+- Pepsi — 3 SAR
+- Sprite — 3 SAR
+- Mountain Dew — 3 SAR
+- Kenza — 2.5 SAR
+- Water — 1 SAR
+- Fries — 5 SAR
+- Special Fries — 15 SAR
+- Salad — 14 SAR
+- Ranch Sauce — 2.5 SAR
+- Garlic Sauce — 2.5 SAR
+- Spicy Sauce — 2.5 SAR
+
+Removed products:
+
+- 7UP
+- Mirinda Orange
+- Mirinda Strawberry
+
+Product images should look realistic, appetizing, and consistent in aspect ratio.
+
+6. BURGER CUSTOMIZATION
+-----------------------
+
+When the customer selects a burger, show a product customization screen or card.
+
+Cheese options:
+
+- No cheese — 0 SAR
+- Regular cheese — 0 SAR
+- Extra cheese — 2 SAR
+
+Spice options:
+
+- Mild
+- Regular
+- Max
+
+Add-ons:
+
+- Extra beef patty — 5.5 SAR
+
+Ingredient removal options:
+
+- No tomato
+- No onion
+- No sauce
+- No specific ingredient
+
+The customer should also have a free-text notes field for requests such as:
+
+- Sauce on the side
+- No pickles
+- Cut in half
+
+Only paid options should increase the item price. Removing an ingredient or choosing
+the regular/default option must not add a charge.
+
+7. PIZZA CUSTOMIZATION
+----------------------
+
+When the customer selects pizza, show flavor and size options.
+
+Pizza flavors:
+
+- Pepperoni
+- Margherita
+- Chicken Ranch
+- Four Cheese
+
+Pizza sizes and prices:
+
+- Small — 16 SAR
+- Medium — 19 SAR
+- Large — 23 SAR
+
+The pizza price displayed in the menu should show the range 16–23 SAR. After the
+customer selects a size, the selected size price must become the item price.
+
+Pizza options:
+
+- Spice level: Mild, Regular, Max
+- Add-ons can be selected with clear prices when applicable
+
+Suggested pizza add-ons:
+
+- Mozzarella — 3 SAR
+- Sausage — 4 SAR
+- Chicken — 5 SAR
+- Olives — 2 SAR
+
+Do not charge for spice level or pizza flavor. Charge only for paid add-ons.
+
+8. SOFT DRINK CUSTOMIZATION
+--------------------------
+
+When the customer presses Soft Drinks, show drink choices instead of treating all
+soft drinks as one generic item.
+
+Available choices:
+
+- Cola — 3 SAR
+- Pepsi — 3 SAR
+- Sprite — 3 SAR
+- Mountain Dew — 3 SAR
+- Kenza — 2.5 SAR
+
+Ice options should not add a fee:
+
+- Regular ice
+- No ice
+- Extra ice
+
+Flavor or drink selection must not add an unexpected fee. The price must be visible
+before adding the item to the cart.
+
+9. CART AND EDITING RULES
+-------------------------
+
+The cart must support:
+
+- Increasing quantity
+- Decreasing quantity
+- Removing an item when quantity reaches zero
+- Showing the price for each line item
+- Showing the complete customization details
+- Showing the total price
+- Adding more products
+- Editing an existing product without resetting its configuration
+
+Every customized item must remain independent.
+
+Example:
+
+- Burger 1: no cheese, no tomato, mild spice
+- Burger 2: extra cheese, no onion, max spice
+
+Editing Burger 1 must not change Burger 2.
+
+The cart must calculate prices correctly:
+
+item price + paid add-ons, multiplied by quantity
+
+Free selections must never increase the total.
+
+10. CUSTOMER DETAILS AND PAYMENT
+--------------------------------
+
+At the end of the flow, ask only for the information needed for the demo:
+
+- Name
+- Mobile number
+- Payment method
+
+Payment method should use a clear selection control with three choices:
+
+- Cash at restaurant
+- Apple Pay
+- Mada
+
+Demo behavior:
+
+- Cash: complete the order and show a success message.
+- Apple Pay: show a demo payment page and explain that it will connect to a payment
+  API later.
+- Mada: show a demo payment page and explain that it will connect to a payment API
+  later.
+
+The MVP must not collect or store real card numbers, CVV, or expiry dates because
+there is no real payment integration yet.
+
+11. VISUAL DESIGN DIRECTION
+---------------------------
+
+The customer experience should look like a real WhatsApp chat inside an iPhone-like
+Flutter-inspired device frame.
+
+Phone frame:
+
+- Tall rounded iPhone proportions
+- Dark realistic outer frame
+- Dynamic Island-style top cutout
+- Realistic shadow
+- Smooth corner radius
+- Stable header, chat area, and composer layout
+
+Header:
+
+- iPhone-style status bar
+- Real-time device time when available
+- Battery indicator
+- Signal and Wi-Fi indicators matching the header color
+- Green WhatsApp-inspired header
+- Circular restaurant avatar
+- “Luqma - لقمة” title
+- Online status
+- Back button
+- Restart conversation control
+
+Chat area:
+
+- WhatsApp wallpaper background
+- Incoming white bubbles
+- Outgoing green bubbles
+- Message timestamps
+- Double-check indicators on outgoing messages
+- Catalog cards inside the conversation
+- Clear button feedback
+
+Landing page:
+
+- Keep a clean investor-demo layout around the phone.
+- Improve the hero typography, spacing, and responsive behavior.
+- Keep the phone as the main visual focus.
+- Make the complete webpage consistent with the phone UI.
+
+12. TECHNOLOGY DIRECTION
+------------------------
+
+For the future full product, the recommended architecture is:
+
+- Frontend: Next.js
+- Backend: FastAPI with Python
+- Database: PostgreSQL or another production database
+- Messaging: Official WhatsApp Cloud API
+- Payments: Saudi payment gateway supporting Mada and Apple Pay
+- Restaurant dashboard: Web dashboard for incoming orders and order status
+
+For the current MVP, a single HTML, CSS, and JavaScript demo is acceptable. The MVP
+uses local fake data and does not need a backend.
+
+13. CURRENT LIMITATIONS AND KNOWN PROBLEMS
+------------------------------------------
+
+1. The UI/UX still needs significant improvement. It currently looks like an MVP
+   prototype and is not yet at a polished production or investor-ready level.
+
+2. The Send button has had a serious bug where pressing it reloads or resets the
+   page instead of continuing the conversation. This must be tested and fixed
+   permanently.
+
+3. The phone frame is not completely convincing or realistic. The proportions,
+   Dynamic Island, status bar, battery, icons, spacing, and bottom composer still
+   need refinement.
+
+4. The complete webpage needs UI/UX improvements, including typography, spacing,
+   responsive layout, visual hierarchy, accessibility, and consistency between the
+   landing page and the phone interface.
+
+5. The demo currently has no real integrations. WhatsApp, payments, database,
+   authentication, notifications, and restaurant operations are simulated.
+
+6. Product customization, cart editing, and price calculation need full end-to-end
+   testing for all combinations.
+
+14. PHASE 2
+----------
+
+Phase 2 can include:
+
+- Official WhatsApp Cloud API integration
+- Real WhatsApp interactive messages and product catalogs
+- Backend order service
+- Restaurant owner dashboard
+- Real-time order notifications
+- Menu management
+- Product option management
+- Customer order history
+- Payment gateway integration for Mada and Apple Pay
+- Order status updates
+- Authentication and restaurant accounts
+- Analytics and sales reporting
+
+15. IMPLEMENTATION PRIORITY
+---------------------------
+
+Before adding real integrations:
+
+1. Stabilize the Send button and conversation state.
+2. Test Arabic and English flows.
+3. Test every product and every quantity action.
+4. Test burger, pizza, and drink customizations.
+5. Verify all paid add-ons update the total.
+6. Verify free options do not update the total.
+7. Verify editing preserves existing customizations.
+8. Improve the phone frame and full-page UI/UX.
+9. Prepare a smooth investor demo flow.
+10. Only then begin Phase 2 integrations.
+
+END OF PROJECT PLAN
