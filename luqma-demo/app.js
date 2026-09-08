@@ -5,9 +5,13 @@ const resetEl = document.querySelector('#resetChat');
 const deviceTimeEl = document.querySelector('#deviceTime');
 const batteryLevelEl = document.querySelector('#batteryLevel');
 const batteryTextEl = document.querySelector('#batteryText');
+const phoneEl = document.querySelector('.phone');
 chatEl.style.minHeight='0';
-screenEl.style.flexShrink='0';
+screenEl.style.flex='0 0 64px';
+screenEl.style.height='64px';
 screenEl.style.minHeight='64px';
+screenEl.style.overflow='visible';
+if(window.innerWidth>450){phoneEl.style.width='390px';phoneEl.style.height='760px';}
 const products = [
   {id:'burger',name:'Burger',price:23,image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=85'},
   {id:'pizza',name:'Pizza',price:14,range:'14–21',image:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=85'},
