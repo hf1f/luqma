@@ -8,6 +8,7 @@ const batteryTextEl = document.querySelector('#batteryText');
 const phoneEl = document.querySelector('.phone');
 const statusBarEl = document.querySelector('.status-bar');
 const deviceStatusEl = document.querySelector('.device-status');
+try {
 deviceStatusEl.insertAdjacentHTML('afterbegin','<span class="signal-icon" aria-label="Signal">▮▮▮</span><span class="wifi-icon-real" aria-label="Wi-Fi">⌁</span>');
 statusBarEl.style.background='#075e54';
 statusBarEl.style.color='#ffffff';
@@ -24,6 +25,7 @@ screenEl.style.height='64px';
 screenEl.style.minHeight='64px';
 screenEl.style.overflow='visible';
 if(window.innerWidth>450){phoneEl.style.width='390px';phoneEl.style.height='760px';}
+} catch (statusError) { console.warn('Status bar enhancement skipped:', statusError); }
 const products = [
   {id:'burger',name:'Burger',price:23,image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=85'},
   {id:'pizza',name:'Pizza',price:14,range:'14–21',image:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=85'},
